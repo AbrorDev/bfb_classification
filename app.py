@@ -13,6 +13,7 @@ st.title("Ayiq, baliq va qushlarni klassifikatsiya qiluvchi dastur")
 
 file = st.file_uploader('Rasm yuklash', type=['jpg', 'png', 'jpeg', 'gif', 'jfif'])
 if file:
+    st.subheader("Yuborilgan rasm")
     st.image(file)
 
     img = PILImage.create(file)
@@ -26,3 +27,4 @@ if file:
 
     fig = px.bar(x=probs*100, y=model.dls.vocab)
     st.plotly_chart(fig)
+    st.write("Qaysi sinfga necha foiz o'xshashligining grafik ko'rinishi")
